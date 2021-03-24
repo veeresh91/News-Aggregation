@@ -1,0 +1,52 @@
+{%extends 'admin_header.html' %}
+
+<!DOCTYPE html>  
+<html>  
+<head>  
+      
+</head>  
+
+{% block head %}
+    <title>All URL's</title>
+{%endblock%}
+
+{% block body %}  <br>
+    <h4 style = "text-align: center;">URL's to parse news feed.</h4><br>
+ 
+    <table class="table table-dark" style = "border-left-style:groove;border-right-style: groove;">
+        <thead>
+            <tr>
+                <th scope="col" style = "text-align: center;">#</th>
+                <th scope="col" style = "text-align: center;">URL</th>
+                <th scope="col" style = "text-align: center;">URL Source</th>
+                <th scope="col" style = "text-align: center;">Category</th>
+                <th scope="col" style = "text-align: center;">Action</th>
+                <th scope="col" style = "text-align: center;">Created By</th>
+                <!-- <th scope="col" style = "text-align: center;">Role</th> -->
+            </tr>
+        </thead>
+        
+        <tbody>
+            {% for row in rows %}  
+                <tr>
+                    <td style = "text-align: center;">{{row["id"]}}</td>
+                    <td style = "text-align: center;">{{row["url"]}}</td>
+                    <td style = "text-align: center;">{{row["source_name"]}}</td>
+                    <td style = "text-align: center;">{{row["category"]}}</td>
+                    <td style = "text-align: center;">
+                        <form action = "/delete_url" method = "POST">
+                            <input type = "hidden" name = "id_to_del" id = "id_to_del" value = {{row["id"]}}>
+                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        </form>
+                    </td>
+                    <td style = "text-align: center;">{{row["created_by"]}}</td>
+                    <!-- <td style = "text-align: center;">{{row["role"]}}</td> -->
+                </tr>
+            {% endfor %} 
+            
+        </tbody>
+    </table>
+    <br><br>  
+  
+{%endblock%}
+</html>  

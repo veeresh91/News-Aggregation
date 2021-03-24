@@ -1,0 +1,29 @@
+{%extends 'base.html' %}
+
+   {% block head %}
+   
+        <title>Bookmarked </title>
+   
+   
+   {%endblock%}
+
+   {% block body %}
+   
+   <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+   
+            {% for row in rows %}  
+                <div class="card" style="width: 78rem; margin-left: 10%; margin-top:2%;">
+                    <!-- <img src="a_002.jpeg" class="card-img-top" style=" width: 10rem;height:5rem;" alt="..."> -->
+                    <div class="card-body">
+                    <h5 class="card-title">{{ row.headline }}</h5>
+                    <p class="card-text">{{ row.summary }}</p>
+                    <form action = "/delete_bookmarked" method = "POST">
+                        <input type = "hidden" name = "id_to_del_bm" id = "id_to_del_bm" value = {{row["articleid"]}}>
+                        <button type="submit" class="btn btn-dark btn-sm" style="margin-left:90%"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                    </form>
+                    </div>
+                </div>
+
+            {%endfor%}
+   
+   {%endblock%}

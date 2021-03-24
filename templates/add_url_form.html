@@ -1,0 +1,40 @@
+{%extends 'admin_header.html' %}<br>
+
+<head>
+
+</head>
+
+{% block head %}
+    <title>Add URL</title> 
+{%endblock%}
+
+{% block body %}
+    <br><h4 style = "text-align: center;">Add URL to parse news feed.</h4>
+    <form action = "/send_url_form" method = "post">
+
+        <div class = "container" style = "width: 50%; margin-top: 2%;">
+            <div class="form-group">
+                <label>URL</label>
+                <span class = "error">*</span>
+                <input type="text" class="form-control" id="url" name = "url" required >
+            </div>
+                        
+            <div class="form-group">
+                <label>URL Source</label>
+                <span class = "error">*</span>
+                <input type="text" class="form-control" id="source_name" name = "source_name" required >
+            </div>
+
+            <div class="col-xs-4">
+                <label>News Category</label>
+                <span class = "error">*</span>
+                <input type="text" class="form-control" id="category" name = "category" required >
+            </div><br>
+
+            <div style = "text-align: center;">
+                <input type = "submit" class="btn btn-dark" value = "Submit">
+            </div>
+        </div>
+        
+    </form>
+{%endblock%}

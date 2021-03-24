@@ -1,0 +1,30 @@
+{%extends 'admin_header.html' %}
+
+{% block body %}
+
+    <br><br><br><h4 style = "text-align: center;">Site Analytics.</h4>
+
+    <div class = "row" style="margin-top: 9%;margin-left: 6%;">
+        <div class="card text-white bg-dark mb-3" style="width: 25rem;height: 15rem;margin-right: 5%;">
+            <div class="card-body">
+                <h5 class="card-title" style = "text-align: center;">Registered Users</h5>
+                <p class="card-text"><h1 style = "text-align: center;">{{rows_all_users["count_users"]}}</h1></p>
+            </div>
+        </div>
+
+        <div class="card text-white bg-dark mb-3" style="width: 25rem;height: 15rem;margin-right: 5%;">
+            <div class="card-body">
+                <h5 class="card-title" style = "text-align: center;">Popular Article</h5>
+                <p class="card-text"><h1 style = "text-align: center;">{{rows_pop_article["count_users"]}}</h1></p>
+            </div>
+        </div>
+
+        <div class="card text-white bg-dark mb-3" style="width: 25rem;height: 15rem;margin-right: 5%;">
+            <div class="card-body">
+                <h5 class="card-title" style = "text-align: center;">Popular Source</h5>
+                <p class="card-text"><h1 style = "text-align: center;">{{rows_pop_source["count_users"]}}</h1></p>
+            </div>
+        </div>
+    </div>
+
+{%endblock%}

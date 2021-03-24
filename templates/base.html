@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="\static\js\main.js">
+    <link rel="stylesheet" type="text/css" href="\static\css\main.css">
+    {% block head %} {%endblock%}
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+          <div class="container-fluid">
+              <a class="navbar-brand" href="#">Welcome </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="http://127.0.0.1:5000/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="http://127.0.0.1:5000/bookmarked">Bookmarks</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                      <a class="nav-link" href="http://127.0.0.1:5000/liked">Liked</a>
+                    </li> -->
+                    <li class="nav-item">
+                      <a class="nav-link" href="logout" style = "margin-left: 1700%;color: white;">Logout</a>
+                    </li>
+                  </ul>
+                  <!-- <a href="/logout"  style="margin-left:75%;color:aliceblue;" >Logout</i></a> -->
+                </div>
+          </div>
+      </nav>
+        <br>
+        <br>
+        <br>
+        <div class="card text-white bg-dark mb-3" style="width: 78rem; margin-left: 10%; margin-top:2%;">
+          <div class="card-body" style="text-align: center;">
+            Reading Can Seriously Damage Your Ignorance... So, Keep Reading !
+          </div>
+        </div>
+
+        {% block body %} {%endblock%}
+
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+        
+        <script>
+          //Get the button
+          var mybutton = document.getElementById("myBtn");
+          
+          // When the user scrolls down 20px from the top of the document, show the button
+          window.onscroll = function() {scrollFunction()};
+          
+          function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+              mybutton.style.display = "block";
+            } else {
+              mybutton.style.display = "none";
+            }
+          }
+          
+          // When the user clicks on the button, scroll to the top of the document
+          function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+          }
+          </script>
+
+          <br>
+    <footer>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <h5 style="color: aliceblue;margin-left: 43%;">..News ends here... </h5>
+       </nav>
+    </footer>
+      
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>List</title>  
+</head>  
+<body>  
+  
+<h3>Employee Information</h3>  
+<table border=5>  
+    <thead>  
+          
+          
+        <td>Email</td>  
+         
+    </thead>  
+      
+    {% for row in rows %}  
+      
+        <tr>  
+            
+            <td>{{row["email"]}}</td>  
+            
+        </tr>  
+      
+    {% endfor %}  
+</table>  
+<br><br>  
+  
+<a href="/">Go back to home page</a>  
+  
+</body>  
+</html>  

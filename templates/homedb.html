@@ -1,0 +1,55 @@
+{%extends 'base.html' %}
+
+{% block head %}
+   
+     <title>db picked news </title>
+   
+   
+{%endblock%}
+
+{% block body %}
+   
+<br>
+  <!-- <h6>database picked view</h6>  -->
+        
+        {% for row in rows %}            
+            
+             <div class="card" style="width: 78rem; margin-left: 10%; margin-top:2%;">
+                    <div class="card-body">
+
+                        <h5 class="card-title">{{row["headline"]}}</h5>
+                        <p class="card-text">{{row["summary"]}}</p>
+                        <!-- <p class="card-text"> Article Reference:<a href='{{row["url"]}}' target="_blank"> {{row["url"]}}</a></p> -->
+                        <p class="card-text">Source: <a href='{{row["news_source"]}}' target="_blank">{{row["news_source"]}}</a></p>
+                        <p class="card-text">Published Date: {{row["published_date"]}}</p>
+                        <div class="btn-group" style="margin-left: 90%;">
+                         <form action = "/upvote" method = "POST">
+                         <input type = "hidden" name = "id_to_upvote" id = "id_to_upvote" value = {{row['articleid']}}>
+                         {% for rows_upvote in rows_upvote  if row['articleid'] == rows_upvote['article_id']%}
+                         <button type="submit" disabled class="btn btn-dark btn-sm"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+                         {% else %}
+                         <button type="submit"  class="btn btn-dark btn-sm"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+                         {%endfor%}
+                     </form>
+                      &nbsp
+
+                    <form action = "/bookmark" method = "POST">
+                         <input type = "hidden" name = "id_to_book" id = "id_to_book" value = {{row['articleid']}}>
+                     
+                        
+                        
+                         {% for rows_book in rows_book  if row['articleid'] == rows_book['article_id']%}                                     
+                         <button type="submit" disabled class="btn btn-dark btn-sm"><i class="fa fa-bookmark-o" aria-hidden="true"></i></button> 
+                         {% else %}
+                         <button type="submit"  class="btn btn-dark btn-sm"><i class="fa fa-bookmark-o" aria-hidden="true"></i></button> 
+                         {%endfor%}
+                         
+                    
+                    </form>
+                    </div>
+                    </div>
+                </div>
+
+        {%endfor%}
+   
+   {%endblock%}

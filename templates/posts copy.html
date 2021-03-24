@@ -1,0 +1,35 @@
+{%extends 'base.html' %}
+
+   {% block head %}
+   
+        <title>posts </title>
+   
+   
+   {%endblock%}
+
+   {% block body %}
+   
+        <!-- <i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, sequi veniam possimus, hic vel eligendi odio dignissimos harum dolores sint iusto totam? Adipisci voluptas officiis distinctio assumenda maxime numquam aperiam?</i> -->
+            {% for j in posts %}
+            
+                <div class="card" style="width: 80rem; margin-left: 12%; margin-top:2%;">
+                    <!-- <img src="" class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                    <h5 class="card-title">{{ j.title }}</h5>
+                    <p class="card-text">{{ j.content }}</p>
+                    {% if j.author %}
+                        <h3>by:{{ j.author}}</h3>
+                        {%else%}
+                        <h3>by:n/a</h3>
+                      
+                    {% endif %}
+                    <button type="button" class="btn btn-default btn-sm" ><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+                    <button type="button" class="btn btn-default btn-sm" ><i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
+                   
+                    
+                    </div>
+                </div>
+
+            {%endfor%}
+   
+   {%endblock%}

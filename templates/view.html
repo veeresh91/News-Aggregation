@@ -1,0 +1,31 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>List</title>  
+</head>  
+<body>  
+  
+<h3>Employee Information</h3>  
+<table border=5>  
+    <thead>  
+        
+        <td>article id</td>  
+        <td>user id</td>  
+      
+    </thead>  
+   
+      
+    {% for row in rows %}  
+      
+        <tr>  
+            <td>{{row["article_id"]}}</td>  
+            <td>{{row["user_id"]}}<td>  
+            
+            
+        </tr>  
+      
+    {% endfor %}  
+</table>  
+<br><br>  
+</body>  
+</html>  

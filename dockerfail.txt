@@ -1,0 +1,14 @@
+# News Aggregation Web Application
+
+FROM python:3.8
+WORKDIR /app
+EXPOSE 5001
+
+COPY requirements.txt /app
+RUN pip3 install -r requirements.txt
+
+#Run app.py when the container launches
+COPY . /app
+CMD [ "python3","app.py" ]
+
+

@@ -1,0 +1,26 @@
+{%extends 'base.html' %}
+
+   {% block head %}
+   
+        <title>liked </title>
+   
+   
+   {%endblock%}
+
+   {% block body %}
+   
+   <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+   
+            {% for row in rows %}  
+                <div class="card" style="width: 78rem; margin-left: 10%; margin-top:2%;">
+                    <!-- <img src="a_002.jpeg" class="card-img-top" style=" width: 10rem;height:5rem;" alt="..."> -->
+                    <div class="card-body">
+                    <h5 class="card-title">{{ row.headline }}</h5>
+                   
+                    <button type='button' class="btn btn-default btn-sm" style="margin-left: 95%;"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+
+            {%endfor%}
+   
+   {%endblock%}
