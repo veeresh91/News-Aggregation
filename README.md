@@ -1,4 +1,4 @@
-# News-Aggregation-
+# News-Aggregation
 News Aggregation  Web Application
 
 
